@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 posts = [
     {
@@ -43,7 +44,7 @@ posts = [
     },
 ]
 
-posts_dict = {post['id']: post for post in posts}
+posts_by_id = {post['id']: post for post in posts}
 
 
 def index(request):
@@ -51,8 +52,10 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 
-def post_detail(request, id_num):
-    post = posts_dict.get(id_num, None)
+def post_detail(request, post_id):
+    post = posts_by_id.get(post_id)
+    if post is None:
+        raise Http404("ID не найден")
     return render(request, 'blog/detail.html', {'post': post})
 
 
