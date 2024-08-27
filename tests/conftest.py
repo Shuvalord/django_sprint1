@@ -45,7 +45,7 @@ def posts():
 
 EXPECTED_POSTS = [
     {
-        'id': 0,
+        'id_num': 0,
         'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
@@ -57,7 +57,7 @@ EXPECTED_POSTS = [
                 который назвал островом Отчаяния.''',
     },
     {
-        'id': 1,
+        'id_num': 1,
         'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
@@ -73,7 +73,7 @@ EXPECTED_POSTS = [
                 гиблого места.''',
     },
     {
-        'id': 2,
+        'id_num': 2,
         'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',

@@ -40,7 +40,7 @@ def test_post_detail(post_id, client, posts):
     )
     assert posts[post_id] == response.context['post'], (
         f'Убедитесь, что в словаре контекста для страницы `posts/{post_id}/` '
-        f'под ключом `post` передаётся словарь с `"id": '
+        f'под ключом `post` передаётся словарь с `"id_num": '
         f'{post_id}` из списка `posts`.'
     )
 

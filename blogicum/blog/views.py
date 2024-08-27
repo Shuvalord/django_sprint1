@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
 posts = [
     {
-        'id': 0,
+        'id_num': 0,
         'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
@@ -15,7 +14,7 @@ posts = [
                 который назвал островом Отчаяния.''',
     },
     {
-        'id': 1,
+        'id_num': 1,
         'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
@@ -31,7 +30,7 @@ posts = [
                 гиблого места.''',
     },
     {
-        'id': 2,
+        'id_num': 2,
         'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',
@@ -44,14 +43,16 @@ posts = [
     },
 ]
 
+posts_dict = {post['id_num']: post for post in posts}
+
 
 def index(request):
     context = {'posts': reversed(posts)}
     return render(request, 'blog/index.html', context)
 
 
-def post_detail(request, id):
-    post = next((post for post in posts if post['id'] == id), None)
+def post_detail(request, id_num):
+    post = posts_dict.get(id_num, None)
     return render(request, 'blog/detail.html', {'post': post})
 
 
