@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 posts = [
     {
-        'id_num': 0,
+        'id': 0,
         'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
@@ -14,7 +14,7 @@ posts = [
                 который назвал островом Отчаяния.''',
     },
     {
-        'id_num': 1,
+        'id': 1,
         'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
@@ -30,7 +30,7 @@ posts = [
                 гиблого места.''',
     },
     {
-        'id_num': 2,
+        'id': 2,
         'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',
@@ -43,7 +43,7 @@ posts = [
     },
 ]
 
-posts_dict = {post['id_num']: post for post in posts}
+posts_dict = {post['id']: post for post in posts}
 
 
 def index(request):
